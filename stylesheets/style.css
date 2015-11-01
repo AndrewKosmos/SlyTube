@@ -1,0 +1,434 @@
+/* line 6, D:/sites/test/testingsusy/stylesheets/style.scss */
+a, a:link, a:visited, a:hover, a:active {
+  text-decoration: none; }
+
+@font-face {
+  font-family: 'alegreyasanssc-light';
+  src: url("../fonts/alegreyasanssc-light.ttf"); }
+
+@font-face {
+  font-family: 'ProximaNova-Light';
+  src: url("../fonts/ProximaNova-Light.otf"); }
+
+@font-face {
+  font-family: 'coolvetica_rg';
+  src: url("../fonts/coolvetica_rg.ttf"); }
+
+/* line 38, D:/sites/test/testingsusy/stylesheets/style.scss */
+.wrap {
+  max-width: 90em;
+  margin-left: auto;
+  margin-right: auto;
+  height: 700px; }
+  /* line 12, D:/sites/test/testingsusy/sass/susy/output/support/_clearfix.scss */
+  .wrap:after {
+    content: " ";
+    display: block;
+    clear: both; }
+
+/* line 43, D:/sites/test/testingsusy/stylesheets/style.scss */
+body {
+  background-color: #f1f1f1;
+  margin: 0; }
+
+/* line 48, D:/sites/test/testingsusy/stylesheets/style.scss */
+.header {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  height: 50px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #c3c3c3; }
+
+/* line 55, D:/sites/test/testingsusy/stylesheets/style.scss */
+.logo {
+  height: 50px;
+  margin-left: 5px;
+  background-image: url("../images/site_logo.png");
+  background-repeat: no-repeat;
+  width: 150px;
+  display: inline-block; }
+
+/* line 64, D:/sites/test/testingsusy/stylesheets/style.scss */
+.phone_menu {
+  cursor: pointer;
+  display: none;
+  width: 21.34831%;
+  float: left;
+  margin-right: 1.1236%;
+  float: right;
+  margin-right: 4.49438%;
+  width: 50px;
+  height: 50px;
+  background-color: #E75247; }
+
+/* line 75, D:/sites/test/testingsusy/stylesheets/style.scss */
+#phone_menu_icon {
+  width: 32px;
+  height: 32px;
+  margin-left: 18%;
+  margin-top: 18%;
+  background: url("../images/icons/settings.svg") no-repeat; }
+
+/* line 83, D:/sites/test/testingsusy/stylesheets/style.scss */
+.searching {
+  position: absolute;
+  display: inline-block;
+  margin-left: 30px;
+  width: 32.58427%;
+  float: left;
+  margin-right: 1.1236%;
+  height: 50px; }
+
+/* line 91, D:/sites/test/testingsusy/stylesheets/style.scss */
+.search_input {
+  width: 100%;
+  height: 95%;
+  border: 0px;
+  border-left: 1px solid #eaeaea;
+  border-right: 1px solid #eaeaea;
+  background: url("../images/icons/search.svg") no-repeat 20px 50%;
+  padding-left: 40px;
+  color: #A9ABBE; }
+  /* line 100, D:/sites/test/testingsusy/stylesheets/style.scss */
+  .search_input:focus {
+    border: 0px;
+    outline: none;
+    border-left: 1px solid #E75247;
+    border-right: 1px solid #E75247;
+    background: url("../images/icons/search-active.svg") no-repeat 20px 50%; }
+
+/* line 109, D:/sites/test/testingsusy/stylesheets/style.scss */
+.nondefined-user {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+  background-color: #E75247; }
+
+/* line 119, D:/sites/test/testingsusy/stylesheets/style.scss */
+#nondef-user-icon {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  margin-left: 18%;
+  margin-top: 18%;
+  background: url("../images/icons/user.svg") no-repeat; }
+
+/* line 129, D:/sites/test/testingsusy/stylesheets/style.scss */
+#shirm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  background: #cccccc;
+  z-index: 1; }
+
+/* line 137, D:/sites/test/testingsusy/stylesheets/style.scss */
+#win {
+  position: absolute;
+  z-index: 3;
+  display: none;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); }
+
+/* line 146, D:/sites/test/testingsusy/stylesheets/style.scss */
+#loginform {
+  padding: 10px;
+  width: 300px;
+  height: 250px;
+  border: 0;
+  background-color: white;
+  font-family: alegreyasanssc-light; }
+  /* line 153, D:/sites/test/testingsusy/stylesheets/style.scss */
+  #loginform p {
+    display: inline-block;
+    font-size: 32px;
+    margin-left: 50%;
+    transform: translate(-50%, -85%);
+    margin-bottom: 0; }
+  /* line 160, D:/sites/test/testingsusy/stylesheets/style.scss */
+  #loginform #login, #loginform #pass {
+    outline: none;
+    border: 0;
+    border-bottom: 3px solid red;
+    width: 75%;
+    margin-left: 5%;
+    height: 40px;
+    margin-bottom: 10px;
+    font-family: alegreyasanssc-light;
+    font-size: 20px;
+    padding-left: 40px;
+    text-align: left;
+    transition: border-bottom 0.2s ease-in-out; }
+    /* line 173, D:/sites/test/testingsusy/stylesheets/style.scss */
+    #loginform #login:focus, #loginform #pass:focus {
+      border-bottom: 1px solid #E75247;
+      transition: border-bottom 0.2s ease-in-out; }
+
+/* line 180, D:/sites/test/testingsusy/stylesheets/style.scss */
+#login {
+  background: url("../images/icons/userlogin-icon.svg") no-repeat 10px;
+  background-size: 20px;
+  margin-top: -20px; }
+
+/* line 186, D:/sites/test/testingsusy/stylesheets/style.scss */
+#pass {
+  background: url("../images/icons/lock.svg") no-repeat 10px;
+  background-size: 20px; }
+
+/* line 191, D:/sites/test/testingsusy/stylesheets/style.scss */
+#login-button {
+  cursor: pointer;
+  position: absolute;
+  display: inline-block;
+  margin-top: 60px;
+  margin-left: -250px;
+  width: 75%;
+  height: 40px;
+  outline: none;
+  border: 0;
+  background-color: #E75247;
+  box-shadow: 0 2px 2px 2px #d96a5d;
+  border-radius: 10px;
+  color: white;
+  font-family: alegreyasanssc-light;
+  font-size: 20px; }
+  /* line 207, D:/sites/test/testingsusy/stylesheets/style.scss */
+  #login-button:active {
+    margin-top: 62px;
+    background-color: #d96a5d;
+    box-shadow: none; }
+
+/* line 214, D:/sites/test/testingsusy/stylesheets/style.scss */
+.ssilk {
+  position: absolute;
+  display: inline-block;
+  color: #E75247;
+  transition: font-size 0.5s ease-in-out;
+  transform-origin: center;
+  margin-top: 115px; }
+  /* line 221, D:/sites/test/testingsusy/stylesheets/style.scss */
+  .ssilk:hover {
+    color: red;
+    font-size: 15.5px; }
+
+/* line 226, D:/sites/test/testingsusy/stylesheets/style.scss */
+.remind {
+  margin-left: -40%; }
+
+/* line 230, D:/sites/test/testingsusy/stylesheets/style.scss */
+.reg {
+  margin-left: -78%; }
+
+/* line 234, D:/sites/test/testingsusy/stylesheets/style.scss */
+.close {
+  float: right;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  z-index: 6;
+  background: #E75247;
+  transform-origin: center;
+  box-shadow: 2px 2px 10px #E16960; }
+  /* line 244, D:/sites/test/testingsusy/stylesheets/style.scss */
+  .close svg {
+    transform-origin: center;
+    margin-left: 25%;
+    margin-top: 25%;
+    transition: transform 0.5s ease-in-out; }
+  /* line 251, D:/sites/test/testingsusy/stylesheets/style.scss */
+  .close:hover svg {
+    transform: scale(1.8, 1.8);
+    transition: transform 0.5s ease-in-out; }
+  /* line 256, D:/sites/test/testingsusy/stylesheets/style.scss */
+  .close:active {
+    background: #E16960; }
+    /* line 258, D:/sites/test/testingsusy/stylesheets/style.scss */
+    .close:active svg {
+      transform: scale(0.8, 0.8);
+      transition: transform 0.5s ease-in-out; }
+
+/* line 265, D:/sites/test/testingsusy/stylesheets/style.scss */
+.side {
+  display: inline-block;
+  width: 185px;
+  height: 300px;
+  border-right: 1px solid #cccccc; }
+  /* line 270, D:/sites/test/testingsusy/stylesheets/style.scss */
+  .side ul {
+    margin: 0;
+    padding: 0;
+    margin-top: 5px; }
+    /* line 274, D:/sites/test/testingsusy/stylesheets/style.scss */
+    .side ul li {
+      list-style: none;
+      height: 25px;
+      margin-bottom: 1px;
+      border-bottom: 1px solid #cccccc;
+      padding-top: 15px;
+      border-right: 0;
+      transition: border-right 0.2s ease-in-out; }
+      /* line 282, D:/sites/test/testingsusy/stylesheets/style.scss */
+      .side ul li:hover {
+        border-right: 5px solid red;
+        transition: border-right 0.2s ease-in-out; }
+      /* line 286, D:/sites/test/testingsusy/stylesheets/style.scss */
+      .side ul li a {
+        margin-top: -16px;
+        float: right;
+        width: 100%;
+        text-align: right;
+        padding-bottom: 9px;
+        padding-top: 10px;
+        color: black;
+        font-family: ProximaNova-Light;
+        font-size: 18px; }
+        /* line 296, D:/sites/test/testingsusy/stylesheets/style.scss */
+        .side ul li a:after {
+          position: relative;
+          margin-left: 5px;
+          margin-right: 5px; }
+
+/* line 306, D:/sites/test/testingsusy/stylesheets/style.scss */
+.home:after {
+  content: url("../images/icons/home.svg");
+  top: 2px; }
+
+/* line 311, D:/sites/test/testingsusy/stylesheets/style.scss */
+.categ:after {
+  content: url("../images/icons/list.svg");
+  top: 2px; }
+
+/* line 316, D:/sites/test/testingsusy/stylesheets/style.scss */
+.latest-vid:after {
+  content: url("../images/icons/film.svg");
+  top: 2px; }
+
+/* line 321, D:/sites/test/testingsusy/stylesheets/style.scss */
+.account:after {
+  content: url("../images/icons/user-tie.svg");
+  top: 1px; }
+
+/* line 326, D:/sites/test/testingsusy/stylesheets/style.scss */
+.my-vid:after {
+  content: url("../images/icons/play.svg");
+  top: 2px; }
+
+/* line 331, D:/sites/test/testingsusy/stylesheets/style.scss */
+.cont {
+  display: flex;
+  min-height: 300px;
+  width: 85%;
+  margin-left: 195px;
+  margin-top: -303px; }
+
+/* line 339, D:/sites/test/testingsusy/stylesheets/style.scss */
+.footer {
+  display: inline-block;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0; }
+
+/* line 344, D:/sites/test/testingsusy/stylesheets/style.scss */
+#preloader {
+  display: none; }
+
+/* line 348, D:/sites/test/testingsusy/stylesheets/style.scss */
+#reg_form {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  height: 300px;
+  width: 400px;
+  border: 1px solid #E75247;
+  border-bottom: 6px solid #E75247;
+  border-top: 6px solid #E75247;
+  border-radius: 15px; }
+  /* line 360, D:/sites/test/testingsusy/stylesheets/style.scss */
+  #reg_form .in_pole {
+    width: 90%;
+    height: 50px;
+    margin-left: 4.5%;
+    margin-top: 20px;
+    font-family: alegreyasanssc-light; }
+  /* line 367, D:/sites/test/testingsusy/stylesheets/style.scss */
+  #reg_form .apply {
+    width: 80%;
+    height: 40px;
+    margin-left: 10%;
+    margin-top: 15px;
+    border-radius: 10px;
+    outline: none;
+    border: 3px solid #E75247;
+    background-color: #E23D31;
+    color: white;
+    font-size: 16px;
+    font-family: alegreyasanssc-light;
+    cursor: pointer; }
+    /* line 380, D:/sites/test/testingsusy/stylesheets/style.scss */
+    #reg_form .apply:hover {
+      margin-top: 10px; }
+
+/* line 386, D:/sites/test/testingsusy/stylesheets/style.scss */
+#reg_label {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%, 0);
+  font-size: 42px;
+  font-family: alegreyasanssc-light; }
+
+@media screen and (max-width: 720px) {
+  /* line 400, D:/sites/test/testingsusy/stylesheets/style.scss */
+  .side {
+    display: none; }
+  /* line 404, D:/sites/test/testingsusy/stylesheets/style.scss */
+  .phone_menu {
+    display: inline-block; }
+  /* line 407, D:/sites/test/testingsusy/stylesheets/style.scss */
+  .cont {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0; }
+  /* line 415, D:/sites/test/testingsusy/stylesheets/style.scss */
+  .searching {
+    width: 38.20225%;
+    float: left;
+    margin-right: 1.1236%; } }
+
+@media screen and (max-width: 620px) {
+  /* line 422, D:/sites/test/testingsusy/stylesheets/style.scss */
+  .logo {
+    display: none; }
+  /* line 426, D:/sites/test/testingsusy/stylesheets/style.scss */
+  .side {
+    display: none; }
+  /* line 430, D:/sites/test/testingsusy/stylesheets/style.scss */
+  .phone_menu {
+    display: inline-block; }
+  /* line 433, D:/sites/test/testingsusy/stylesheets/style.scss */
+  .cont {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0; }
+  /* line 437, D:/sites/test/testingsusy/stylesheets/style.scss */
+  .searching {
+    width: 21.34831%;
+    float: left;
+    margin-right: 1.1236%; } }
+
+/*# sourceMappingURL=style.css.map */
