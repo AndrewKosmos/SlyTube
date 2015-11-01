@@ -11,8 +11,6 @@
             return $db;
         }
 
-     $All_DB_connection = connectDB();
-
      function verify_one_checkbox($name)
     {
         $result = false;
@@ -28,6 +26,7 @@
 
      function getActiveUser($user_id)
        {
+             $All_DB_connection = connectDB();
             $query = "select Login from users where ID = :user_id limit 1";
             $q = $All_DB_connection->prepare($query);
             $q->execute(array(":user_id" => $user_id));
@@ -38,7 +37,7 @@
             }
             else
             {
-                return $row;
+                return $row["Login"];
             }
        }
 
@@ -171,7 +170,7 @@
             return $this->is_authorized;
         }
         
-        public function logOut()
+        public static function logOut()
         {
             if(!empty($_SESSION["user_id"]))
             {

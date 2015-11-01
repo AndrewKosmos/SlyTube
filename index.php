@@ -36,7 +36,11 @@
                 }
                 else{
                     $ActiveUser = getActiveUser($_SESSION['user_id']);
-                    echo $ActiveUser;
+                    ?>
+                        <div class="defined-user">
+                            <p><?php echo $ActiveUser; ?></p>
+                        </div>
+                    <?php
                 }
             ?>
             
