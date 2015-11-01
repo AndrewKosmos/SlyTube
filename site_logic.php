@@ -11,6 +11,8 @@
             return $db;
         }
 
+     $All_DB_connection = connectDB();
+
      function verify_one_checkbox($name)
     {
         $result = false;
@@ -24,6 +26,21 @@
         return $result;
     }
 
+     function getActiveUser($user_id)
+       {
+            $query = "select Login from users where ID = :user_id limit 1";
+            $q = $All_DB_connection->prepare($query);
+            $q->execute(array(":user_id" => $user_id));
+            $row = $q->fetch();
+            if(!$row)
+            {
+                return "Error";
+            }
+            else
+            {
+                return $row;
+            }
+       }
 
     class user{
         public $username;
@@ -101,7 +118,7 @@
                 ':salt' => $hashes['salt']
                 ));
                 $this->DB->commit();
-                header('index.php');
+                header('Location: index.php');
             }
             catch(\PDOException $e)
             {
@@ -147,8 +164,11 @@
                     $this->is_authorized = true;
                     $this->user_id = $this->user['ID'];
                     $this->saveSession($remember);
+                    header("Location: index.php");
                 }
             }
+
+            return $this->is_authorized;
         }
         
         public function logOut()
@@ -161,6 +181,7 @@
         
         public function saveSession($remember = false,$http_only = true, $days = 7)
         {
+            session_start();
             $_SESSION["user_id"] = $this->user_id;
             if($remember)
             {

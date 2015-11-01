@@ -1,5 +1,6 @@
 <?php
     include("site_logic.php");
+    session_start();
 ?>
 
 
@@ -22,9 +23,23 @@
             <div class="searching">
                 <input class="search_input" type="text" placeholder="Search...">
             </div>
-            <div class="nondefined-user" onclick="showWin();">
-                <div id="nondef-user-icon" onclick="showWin();"></div>
-            </div>
+            <?php
+                $sost = user::isAuthorized();
+
+                if(!$sost)
+                {
+                    ?>
+                    <div class="nondefined-user" onclick="showWin();">
+                        <div id="nondef-user-icon" onclick="showWin();"></div>
+                    </div>
+                <?php
+                }
+                else{
+                    $ActiveUser = getActiveUser($_SESSION['user_id']);
+                    echo $ActiveUser;
+                }
+            ?>
+            
         </div>
         
         <div id="win">

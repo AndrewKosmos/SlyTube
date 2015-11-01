@@ -5,5 +5,5 @@
     $checkbox_result = verify_one_checkbox('remember');
 
     $newuser = new user($login,$password);
-    $newuser->Authorization($login,$password);
+    $newuser->Authorization($login,$password,$checkbox_result)
 ?>
