@@ -1,4 +1,5 @@
 <?php   
+        session_start();
         function connectDB()
         {
             try{
@@ -160,7 +161,6 @@
                 }
                 else
                 {
-                    session_start();
                     $this->is_authorized = true;
                     $this->user_id = $this->user['ID'];
                     $this->saveSession($remember);
@@ -176,7 +176,9 @@
             if(!empty($_SESSION["user_id"]))
             {
                 unset($_SESSION["user_id"]);
+                unset($_SESSION);
                 session_destroy();
+                header("Location: index.php");
             }
         }
         
