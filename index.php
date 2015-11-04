@@ -1,6 +1,6 @@
 <?php
     include("site_logic.php");
-    session_start();
+    //session_start();
 ?>
 
 
@@ -38,7 +38,11 @@
                     $ActiveUser = getActiveUser($_SESSION['user_id']);
                     ?>
                         <div class="defined-user">
-                            <p><?php echo $ActiveUser; ?></p>
+                           <div id="small_avatar"></div>
+                            <a href="#"><?php echo $ActiveUser; ?></a>
+                            <form id="logout_form" action="logout_logic.php" name="logout" method="post">
+                                <input type="submit" value="Exit" id="l_out" name="lout_but">
+                            </form>
                         </div>
                     <?php
                 }
