@@ -190,7 +190,7 @@ body{
 #loginform{
     padding: 10px;
     width: $loginform-width;
-    height: 250px;
+    height: 280px;
     border: 0;
     background-color: white;
     font-family: alegreyasanssc-light;
@@ -219,6 +219,15 @@ body{
             transition: border-bottom .2s ease-in-out;
         }
     }
+    
+    #remember{
+        margin-left: 15px;
+    }
+    
+    #or{
+        font-size: 18px;
+        margin-top: 75px;
+    }
 }
 
 #login{
@@ -236,8 +245,8 @@ body{
     cursor: pointer;
     position: absolute;
     display: inline-block;
-    margin-top: 60px;
-    margin-left: -250px;
+    margin-top: 30px;
+    margin-left: -90px;
     width: 75%;
     height: 40px;
     outline: none;
@@ -249,7 +258,6 @@ body{
     font-family: alegreyasanssc-light;
     font-size: 20px;
     &:active{
-        margin-top: 62px;
         background-color: #d96a5d;
         box-shadow: none;
     }
@@ -267,12 +275,10 @@ body{
         font-size: 15.5px;
     }
 }
-.remind{
-    margin-left: -40%;
-}
 
 .reg{
-    margin-left: -78%;
+    margin-left: -18%;
+    margin-top: 75px;
 }
 
 .close{
@@ -373,7 +379,7 @@ body{
 }
 
 .cont{
-    display: flex;
+    @include span(15);
     min-height: 300px;
     width: 85%;
     margin-left: 195px;
@@ -435,6 +441,26 @@ body{
         font-size: 42px;
         font-family: alegreyasanssc-light;
     }
+
+#mainContent{
+    p{
+        display: block;
+        font-size: 32px;
+        font-family: alegreyasanssc-light;
+        margin-left: 40%;
+        height: 32px;
+    }
+}
+
+.video_preview
+{
+    margin-left: 40px;
+    width: 200px;
+    height: 100px;
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+    box-shadow: 3px 3px 0px 0px #c3c3c3;
+}
 
 @media screen and (max-width:720px){
     .logo{

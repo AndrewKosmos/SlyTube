@@ -65,8 +65,9 @@
                     <label><input type="checkbox" id="remember" name="remember">Remember me</label>
                     <input type="submit" id="login-button" value="Sign up!">
                 </form>
+                
+                <p id="or">...or</p>
                 <a href="registration.php" class="ssilk reg">Register</a>
-                <a href="#" class="remind ssilk">Forgot password?</a>
             </div>
         </div>
         
@@ -77,13 +78,20 @@
             <ul>
                 <li><a href="" class="menu-ref home">Home</a></li>
                 <li><a href="" class="menu-ref categ" onclick="">Categories</a></li>
-                <li><a href="" class="menu-ref latest-vid">New videos</a></li>
+                <li><a href="" class="menu-ref latest-vid">New video</a></li>
+                <?php
+                if($sost)
+                {
+                    ?>
                 <li><a href="" class="menu-ref account">My Account</a></li>
                 <li><a href="" class="menu-ref my-vid">My videos</a></li>
+                    <?php
+                }
+                ?>
             </ul>
         </div>
         <div class="cont" id="mainContent">
-            
+            <p>Last videos</p>
         </div>
         <div class="footer"></div>
         <div id="preloader">LOADING</div>
