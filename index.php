@@ -11,6 +11,7 @@
     <title>TEST</title>
     <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="stylesheet" href="stylesheets/video-js.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/video.js"></script>
 </head>
 <body>
@@ -76,15 +77,16 @@
         <!-- SIDEBAR -->
         <div class="side">
             <ul>
-                <li><a href="" class="menu-ref home">Home</a></li>
-                <li><a href="" class="menu-ref categ" onclick="">Categories</a></li>
-                <li><a href="" class="menu-ref latest-vid">New video</a></li>
+                <li><a href="index.php" class="menu-ref home">Home</a></li>
+                <li><a class="menu-ref categ" onclick="">Categories</a></li>
+                
                 <?php
                 if($sost)
                 {
                     ?>
-                <li><a href="" class="menu-ref account">My Account</a></li>
-                <li><a href="" class="menu-ref my-vid">My videos</a></li>
+                <li onclick="ChangePage('new_video.php')"><a class="menu-ref latest-vid">New video</a></li>
+                <li><a class="menu-ref account">My Account</a></li>
+                <li><a class="menu-ref my-vid">My videos</a></li>
                     <?php
                 }
                 ?>
@@ -97,5 +99,6 @@
         <div id="preloader">LOADING</div>
     </div>
     <script src="js/modal-userlogin.js"></script>
+    <script src="js/ajax-changepage.js"></script>
 </body>
 </html>
