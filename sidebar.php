@@ -13,7 +13,7 @@
                 if($sost)
                 {
                     ?>
-                <li><a class="menu-ref latest-vid">New video</a></li>
+                <li><a href="new_video.php" class="menu-ref latest-vid">New video</a></li>
                 <li><a class="menu-ref account">My Account</a></li>
                 <li><a class="menu-ref my-vid">My videos</a></li>
                     <?php

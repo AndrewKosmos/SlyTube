@@ -17,6 +17,10 @@
             });
         });
 </script>
+   <?php
+        include("header.php");
+        include("sidebar.php");
+    ?>
     <p>ADD NEW VIDEO</p>
     <form action="" method="post" name="add_video_form" id="add_video_form_id">
         <input type="text" name="name_video" placeholder="Video Name">
