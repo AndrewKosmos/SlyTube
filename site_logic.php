@@ -197,4 +197,44 @@
             }
         }
     }
+
+    class video_worker{
+        public $can_be_uploaded = false;
+        
+        public static function checkFile($file)
+        {
+            $blacklist = array(".php","html",".php3",".php4",".htm",".mp3");
+            foreach($blacklist as $item)
+            {
+                if(preg_match("/$item\$/i", $file['name'])) exit;
+            }
+            $filetype = $file['type'];
+            $size = $file['size'];
+            /*if($filetype != "video/mp4") exit;
+            if($size > 104857600) exit;*/
+            if($filetype == "video/mp4" && $size <= 104857600)
+            {
+                $can_be_uploaded = true;
+            }
+        }
+        
+        public static function uploadFile($file,$name,$description)
+        {
+            if($can_be_uploaded && !empty($name) && !empty($description)){
+                move_uploaded_file($file['tmp_name'],'videos/'.$name);
+                echo "Uploaded!";
+            }
+            else{
+                if(empty($name))
+                {
+                    echo "Video name can't be empty!";
+                }
+                if(empty($description))
+                {
+                    echo "Fill the description please!";
+                }
+               echo "File can not be Uploaded on server"; 
+            }
+        }
+    }
 ?>

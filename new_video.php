@@ -32,9 +32,18 @@
             <p>Create video description</p>
             <textarea name="desciption_video" placeholder="Description" id="video_desc_input"></textarea>
             <div class="upload"></div>
-            <input type="submit" value="Add video" name="add_video_button" class="apply">
+            <!--<input type="submit" value="Add video" name="add_video_button" class="apply">-->
+            <input type="button" value="Add video" name="add_video_button" class="apply" id="add_v_b">
         </form>
     </div>
-    
+    <script>
+        $(document).ready(function(){
+            $('#add_v_b').click(function(){
+                $.post('add_video_logic.php',function(data){
+                   alert(data); 
+                });
+            });
+        });
+    </script>
 </body>
 </html>
