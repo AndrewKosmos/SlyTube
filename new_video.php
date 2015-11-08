@@ -13,7 +13,10 @@
 <script>
         jQuery('document').ready(function($){
             $('.upload').upload({
-            	
+            	action:'add_video_worker.php',
+                postKey:'newvideo',
+                maxQueue:1,
+                maxSize:524288000
             });
         });
 </script>
@@ -21,11 +24,17 @@
         include("header.php");
         include("sidebar.php");
     ?>
-    <p>ADD NEW VIDEO</p>
-    <form action="" method="post" name="add_video_form" id="add_video_form_id">
-        <input type="text" name="name_video" placeholder="Video Name">
-        <textarea name="desciption_video" placeholder="Description"></textarea>
-        <div class="upload"></div>
-    </form>
+    <div class="cont" id="mainContent">
+          <p>ADD NEW VIDEO</p>
+        <form action="add_video_logic.php" method="post" name="add_video_form" id="add_video_form_id">
+            <p>Enter video name</p>
+            <input type="text" name="name_video" placeholder="Video Name" id="video_name_input">
+            <p>Create video description</p>
+            <textarea name="desciption_video" placeholder="Description" id="video_desc_input"></textarea>
+            <div class="upload"></div>
+            <input type="submit" value="Add video" name="add_video_button" class="apply">
+        </form>
+    </div>
+    
 </body>
 </html>

@@ -34,6 +34,7 @@ $nondefined_user-icon : '../images/icons/user.svg';
 $lock-icon: '../images/icons/lock.svg';
 $userlogin-icon: '../images/icons/userlogin-icon.svg';
 $redbuttons : #E23D31;
+$light_red_color:#E23D31; 
 
 .wrap{
     @include container();
@@ -415,7 +416,9 @@ body{
         margin-top: 20px;
         font-family: alegreyasanssc-light;
     }
-    .apply{
+}
+
+.apply{
         width: 80%;
         height: 40px;
         margin-left: 10%;
@@ -431,8 +434,10 @@ body{
         &:hover{
             margin-top:20px;
         }
+        &:active{
+          outline: none;  
+        }
     }
-}
 
 #reg_label{
         position: absolute;
@@ -463,9 +468,66 @@ body{
     box-shadow: 3px 3px 0px 0px #c3c3c3;
 }
 
+#add_video_form_id
+{
+    p{
+        width: 200px;
+        font-size: 18px;
+        padding: 0;
+        margin-top: 20px;
+        margin-bottom: 0;
+        margin-left: 50px;
+        font-family: alegreyasanssc-light;
+    }
+    #video_name_input{
+        position: relative;
+        left: 50%;
+        transform: translate(-50%,0);
+        width: 90%;
+        height: 50px;
+        padding-left: 20px;
+        font-size: 24px;
+        font-family: alegreyasanssc-light;
+        outline: none;
+        border: 1px solid #cccccc;
+        &:focus{
+            border: 1px solid $light_red_color;
+            color: $light_red_color;
+        }
+    }
+    #video_desc_input{
+        position: relative;
+        padding-top: 20px;
+        left: 50%;
+        transform: translate(-50%,0);
+        width: 90%;
+        height: 200px;
+        resize: none;
+        font-size: 18px;
+        font-family:ProximaNova-Light;
+        padding-left: 20px;
+        outline: none;
+        border: 1px solid #cccccc;
+        &:focus{
+            border: 1px solid $light_red_color;
+        }
+    }
+    .apply{
+        position: relative;
+        width: 250px;
+        height: 50px;
+        margin-left: 445px;
+        margin-bottom: 100px;
+        margin-top: 50px;
+    }
+}
+
 .upload{
-    width: 100%;
-    height: 30px;
+    position: relative;
+    width: 92%;
+    left: 50%;
+    transform: translate(-50%,0);
+    margin-top: 50px;
 }
 
 @media screen and (max-width:720px){

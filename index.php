@@ -30,7 +30,6 @@
             <p>Last videos</p>
         </div>
         <div class="footer"></div>
-        <div id="preloader">LOADING</div>
     </div>
     <script src="js/modal-userlogin.js"></script>
     <script src="js/ajax-changepage.js"></script>
