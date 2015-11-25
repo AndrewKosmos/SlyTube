@@ -478,6 +478,9 @@ body{
         margin-bottom: 0;
         margin-left: 50px;
         font-family: alegreyasanssc-light;
+        &:first-child{
+            display: inline-block;
+        }
     }
     #video_name_input{
         position: relative;
@@ -529,6 +532,16 @@ body{
     transform: translate(-50%,0);
     margin-top: 20px;
     margin-bottom: 50px;
+    display: none;
+}
+
+#error_block{
+    display: none;
+    border-bottom: 2px solid $light_red_color;
+    width: 200px;
+    font-family: alegreyasanssc-light;
+    color: black;
+    text-align: center;
 }
 
 @media screen and (max-width:720px){

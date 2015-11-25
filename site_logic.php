@@ -200,7 +200,6 @@
     }
 
     class video_worker{
-        
         public static function checkFile($file)
         {
             $can_be_uploaded = false;
@@ -214,15 +213,16 @@
             if($filetype == "video/mp4" && $size <= 104857600)
             {
                 $can_be_uploaded = true;
-                echo "Can upload";
             }
             return $can_be_uploaded;
         }
         
         public static function uploadFile($can_be_uploaded,$file,$name,$description)
         {
-            if($can_be_uploaded && !empty($name) && !empty($description)){
-                move_uploaded_file($file['tmp_name'],'videos/'.$name);
+            $DB = connectDB();
+            if($can_be_uploaded && !empty($name)){
+                move_uploaded_file($file["tmp_name"],"videos/" .$file['name']);
+                
                 echo "Uploaded!";
             }
             else{
@@ -230,11 +230,8 @@
                 {
                     echo "Video name can't be empty!";
                 }
-                if(empty($description))
-                {
-                    echo "Fill the description please!";
-                }
-               echo "File can not be Uploaded on server"; 
+                else
+                    echo "File can not be Uploaded on server"; 
             }
         }
     }
