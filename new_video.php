@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>New Video</title>
+    <title>SlyTube - New Video</title>
+    <link rel="icon" href="favicon2.png" type="image/png">
     <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="stylesheet" href="stylesheets/upload.css">
     <script src="js/jquery-1.11.3.min.js"></script>
@@ -49,6 +50,8 @@
             <div id="result_upload"></div>
         </form>
     </div>
+    
+    <?php include("footer.php");  ?>
     <script>
         $(document).ready(function(){
             $('#add_v_b').click(function(){

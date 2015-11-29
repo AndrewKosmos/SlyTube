@@ -1,8 +1,28 @@
 <?php   
         session_start();
+        
+        /*class dbconnection{
+            $dbh = null;
+            function __construct()
+            {
+                try{
+                    $dbh = new PDO("mysql:host=localhost;dbname=slytube","Andrew","dvG2Ryyq8HCuv5B7");    
+                }
+                catch(PDOException $e){
+                    echo $e->getMessage();
+                }
+            }
+            
+            public static function destroy()
+            {
+                $dbh = null;
+            }
+        }*/
+
 
         function connectDB()
         {
+            $db = null;
             try{
                 $db = new PDO("mysql:host=localhost;dbname=slytube","Andrew","dvG2Ryyq8HCuv5B7");    
             }
@@ -41,6 +61,7 @@
             {
                 return $row["Login"];
             }
+            unset($All_DB_connection);
        }
 
     class user{
