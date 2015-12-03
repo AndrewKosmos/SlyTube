@@ -569,26 +569,28 @@ body {
   /* line 574, D:/sites/SlyTV/stylesheets/style.scss */
   .vid_prev .pic {
     background-color: #eaeaea;
+    background: url("../favicon.png") no-repeat 0 50px;
+    background-size: 100%;
     border: 1px solid #cccccc;
     width: 290px;
     height: 150px;
     margin-left: 5px;
     background-color: gray; }
-  /* line 582, D:/sites/SlyTV/stylesheets/style.scss */
+  /* line 584, D:/sites/SlyTV/stylesheets/style.scss */
   .vid_prev .v_name, .vid_prev #v_user {
     font-size: 18px;
     margin-left: 5px;
     height: 18px; }
-  /* line 587, D:/sites/SlyTV/stylesheets/style.scss */
+  /* line 589, D:/sites/SlyTV/stylesheets/style.scss */
   .vid_prev .v_name {
     outline: none;
     cursor: pointer;
     color: black; }
-  /* line 592, D:/sites/SlyTV/stylesheets/style.scss */
+  /* line 594, D:/sites/SlyTV/stylesheets/style.scss */
   .vid_prev #v_user {
     border-bottom: 1px solid #E23D31; }
 
-/* line 597, D:/sites/SlyTV/stylesheets/style.scss */
+/* line 599, D:/sites/SlyTV/stylesheets/style.scss */
 .video_block {
   width: 640px;
   height: 300px;
@@ -596,22 +598,22 @@ body {
   margin-left: 20px;
   display: inline-block; }
 
-/* line 605, D:/sites/SlyTV/stylesheets/style.scss */
+/* line 607, D:/sites/SlyTV/stylesheets/style.scss */
 .video {
   width: 640px;
   height: 264px;
   background-color: white;
   border: 1px solid #cccccc; }
 
-/* line 612, D:/sites/SlyTV/stylesheets/style.scss */
+/* line 614, D:/sites/SlyTV/stylesheets/style.scss */
 .info {
   border-bottom: 1px solid #E23D31;
   height: 36px; }
-  /* line 615, D:/sites/SlyTV/stylesheets/style.scss */
+  /* line 617, D:/sites/SlyTV/stylesheets/style.scss */
   .info #p_v_name {
     margin-left: 0;
     display: inline-block; }
-  /* line 619, D:/sites/SlyTV/stylesheets/style.scss */
+  /* line 621, D:/sites/SlyTV/stylesheets/style.scss */
   .info .add_button {
     float: right;
     color: white;
@@ -626,59 +628,90 @@ body {
     cursor: pointer;
     transition: width 0.4s ease-in-out;
     font-family: alegreyasanssc-light; }
-    /* line 633, D:/sites/SlyTV/stylesheets/style.scss */
+    /* line 635, D:/sites/SlyTV/stylesheets/style.scss */
     .info .add_button:hover {
       width: 100px;
       transition: width 0.4s ease-in-out;
       font-size: 14px; }
+  /* line 641, D:/sites/SlyTV/stylesheets/style.scss */
+  .info #timespan_text {
+    display: block;
+    margin-top: 10px;
+    resize: none;
+    width: 640px; }
+  /* line 647, D:/sites/SlyTV/stylesheets/style.scss */
+  .info #add_text_timestamp {
+    float: left;
+    margin-left: 246px;
+    width: 150px; }
+  /* line 652, D:/sites/SlyTV/stylesheets/style.scss */
+  .info .add_timespan {
+    display: none; }
 
-/* line 641, D:/sites/SlyTV/stylesheets/style.scss */
+/* line 657, D:/sites/SlyTV/stylesheets/style.scss */
 .t_spans_block {
   display: inline-block;
   float: right;
-  height: 350px;
+  height: 300px;
   width: 450px;
-  margin-right: 30px;
+  margin-right: 20px;
   margin-top: 20px;
   background-color: white;
   border: 1px solid #cccccc; }
+  /* line 666, D:/sites/SlyTV/stylesheets/style.scss */
+  .t_spans_block .timespan_link_div {
+    width: 100%;
+    height: 20px;
+    border-bottom: 1px solid #cccccc;
+    cursor: pointer; }
+    /* line 671, D:/sites/SlyTV/stylesheets/style.scss */
+    .t_spans_block .timespan_link_div:hover {
+      border-bottom: 1px solid #E23D31; }
+    /* line 674, D:/sites/SlyTV/stylesheets/style.scss */
+    .t_spans_block .timespan_link_div #timespan_link_time, .t_spans_block .timespan_link_div #timespan_user, .t_spans_block .timespan_link_div #timespan_link_text {
+      cursor: pointer;
+      display: inline-block;
+      padding: 0;
+      margin: 0;
+      margin-left: 15px;
+      font-size: 12px; }
 
 @media screen and (max-width: 720px) {
-  /* line 657, D:/sites/SlyTV/stylesheets/style.scss */
+  /* line 690, D:/sites/SlyTV/stylesheets/style.scss */
   .side {
     display: none; }
-  /* line 661, D:/sites/SlyTV/stylesheets/style.scss */
+  /* line 694, D:/sites/SlyTV/stylesheets/style.scss */
   .phone_menu {
     display: inline-block; }
-  /* line 664, D:/sites/SlyTV/stylesheets/style.scss */
+  /* line 697, D:/sites/SlyTV/stylesheets/style.scss */
   .cont {
     width: 100%;
     float: left;
     margin-left: 0;
     margin-right: 0; }
-  /* line 672, D:/sites/SlyTV/stylesheets/style.scss */
+  /* line 705, D:/sites/SlyTV/stylesheets/style.scss */
   .searching {
     width: 38.20225%;
     float: left;
     margin-right: 1.1236%; } }
 
 @media screen and (max-width: 620px) {
-  /* line 679, D:/sites/SlyTV/stylesheets/style.scss */
+  /* line 712, D:/sites/SlyTV/stylesheets/style.scss */
   .logo {
     display: none; }
-  /* line 683, D:/sites/SlyTV/stylesheets/style.scss */
+  /* line 716, D:/sites/SlyTV/stylesheets/style.scss */
   .side {
     display: none; }
-  /* line 687, D:/sites/SlyTV/stylesheets/style.scss */
+  /* line 720, D:/sites/SlyTV/stylesheets/style.scss */
   .phone_menu {
     display: inline-block; }
-  /* line 690, D:/sites/SlyTV/stylesheets/style.scss */
+  /* line 723, D:/sites/SlyTV/stylesheets/style.scss */
   .cont {
     width: 100%;
     float: left;
     margin-left: 0;
     margin-right: 0; }
-  /* line 694, D:/sites/SlyTV/stylesheets/style.scss */
+  /* line 727, D:/sites/SlyTV/stylesheets/style.scss */
   .searching {
     width: 21.34831%;
     float: left;

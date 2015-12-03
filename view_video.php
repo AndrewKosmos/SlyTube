@@ -29,23 +29,80 @@
             </div>
             <div class="info">
                 <p id="p_v_name"><?php echo $_SESSION["curr_video"]; ?></p>
-                <button class="add_button">+</button>
+                <button class="add_button" id="show_block_add">+</button>
+                <div class="add_timespan">
+                    <textarea id="timespan_text" rows="2"></textarea>
+                    <button class="add_button" id="add_text_timestamp">Add</button>
+                </div>
             </div>
         </div>
-        <div class="t_spans_block"></div>
+        <div class="t_spans_block">
+            <?php
+                $DB = connectDB();
+                $query = "select ID from videos where Name='".$_SESSION['curr_video']."'";
+                $q = $DB->prepare($query);
+                $q->execute();
+                $row = $q->fetch();
+                $id = $row["ID"];
+                $qq = "select Login,text,time from timespans join users on timespans.IDUser = users.ID where IDVideo = :id";
+                $q = $DB->prepare($qq);
+                $q->execute(array(':id' => $id));
+                while($row = $q->fetch(PDO::FETCH_ASSOC))
+                {
+                    ?>
+                        <div class="timespan_link_div">
+                            <p id="timespan_user"><?php echo $row['Login'] ?></p>
+                            <p id="timespan_link_time"><?php echo $row['time'] ?></p>
+                            <p id="timespan_link_text"><?php echo $row['text'] ?></p>
+                        </div>
+                    <?php
+                }
+            ?>
+        </div>
     </div>
     
     
     <?php  include("footer.php");  ?>
     
     <script>
-        $(".add_button").mouseenter(function(){
+        var myPlayer = videojs('my-video');
+        $("#add_text_timestamp").click(function(){
+            //alert(myPlayer.currentTime());
+            var time = myPlayer.currentTime();
+            var timsp_text = $("#timespan_text").val();
+            var view_name = $("#p_v_name").text();
+            if(time != 0 && timsp_text != "")
+                {
+                    $.post("add_timespan_logic.php",{time:time,text:timsp_text,view_name:view_name},function(data){
+                    });
+                }
+            $(".info").css('height','36px');
+            $(".add_timespan").css('display','none');
+            myPlayer.play();
+            $(".t_spans_block").load("ajax_refresh_timestamps.php",function(){
+                
+            });
+        });
+        
+        $("#show_block_add").mouseenter(function(){
             $(this).text("Add timespan");
             $(this).css('white-space','nowrap');
             $(this).css('overflow','hidden');
         }).mouseleave(function(){
             $(this).text("+");
+        }).click(function(){
+            $(".info").css('height','126px');
+            $(".add_timespan").css('display','block');
+            myPlayer.pause();
+            $("#timespan_text").val(" ");
         });
+        
+        $(".timespan_link_div").click(function(){
+            //alert($(this).find("#timespan_link_time").text());
+            var t = $(this).find("#timespan_link_time").text();
+            myPlayer.currentTime(t);
+        });
+        
     </script>
 </body>
 </html>
