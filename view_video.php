@@ -10,8 +10,10 @@
     <link rel="icon" href="favicon2.png" type="image/png">
     <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="stylesheet" href="js/video-js.min.css">
+    <link rel="stylesheet" href="js/videojs.markers.css">
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/video.js"></script>
+        <script src="js/videojs-markers.js"></script>
 </head>
 <body>
     <?php  $adr = "videos/" .$_SESSION["curr_video"] . ".mp4";  ?>
@@ -25,6 +27,10 @@
                   To view this video please enable JavaScript, and consider upgrading to a web browser that
                   <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
                 </p>
+                <div class="show_break">
+                <div class="av_mes"></div>
+                <p></p>
+            </div>
                 </video>
             </div>
             <div class="info">
@@ -36,6 +42,10 @@
                 </div>
             </div>
         </div>
+        <!--<div class="show_break">
+                <div class="av_mes"></div>
+                <p></p>
+            </div>-->
         <div class="t_spans_block">
             <?php
                 $DB = connectDB();
@@ -56,18 +66,25 @@
                             <p id="timespan_link_text"><?php echo $row['text'] ?></p>
                         </div>
                     <?php
+                        
                 }
             ?>
         </div>
     </div>
-    
-    
+
+
     <?php  include("footer.php");  ?>
-    
+
     <script>
         var myPlayer = videojs('my-video');
+        var mass_posts = $(".timespan_link_div");
+        var mas = [];
+        for(var i=0;i<mass_posts.length;i++)
+            {
+                //alert($(mass_posts[i]).find("#timespan_link_time").text());
+                mas[i] = {time: $(mass_posts[i]).find("#timespan_link_time").text(),text: $(mass_posts[i]).find("#timespan_link_text").text()}
+            }
         $("#add_text_timestamp").click(function(){
-            //alert(myPlayer.currentTime());
             var time = myPlayer.currentTime();
             var timsp_text = $("#timespan_text").val();
             var view_name = $("#p_v_name").text();
@@ -80,10 +97,10 @@
             $(".add_timespan").css('display','none');
             myPlayer.play();
             $(".t_spans_block").load("ajax_refresh_timestamps.php",function(){
-                
+
             });
         });
-        
+
         $("#show_block_add").mouseenter(function(){
             $(this).text("Add timespan");
             $(this).css('white-space','nowrap');
@@ -96,13 +113,21 @@
             myPlayer.pause();
             $("#timespan_text").val(" ");
         });
-        
+
         $(".timespan_link_div").click(function(){
             //alert($(this).find("#timespan_link_time").text());
             var t = $(this).find("#timespan_link_time").text();
             myPlayer.currentTime(t);
         });
         
+        myPlayer.markers({markerTip:{
+         display: true,
+         text: function(marker){
+            return marker.text;
+         }
+        },
+        markerStyle:{'width':'3px','background-color':'white','border-radius':'50%'},
+        markers: mas});
     </script>
 </body>
 </html>

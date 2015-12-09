@@ -681,6 +681,17 @@ body{
         }
     }
 }
+.show_break{
+    position: absolute;
+    width: 500px;
+    z-index: 2147483647;
+    //margin-left: -570px;
+    //margin-top: 212px;
+    height: 32px;
+    overflow: hidden;
+    display: inline-block;
+    background-color: red;
+}
 
 @media screen and (max-width:720px){
     .logo{
